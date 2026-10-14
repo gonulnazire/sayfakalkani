@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sözleşme Okuyucu</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <span id="logo"></span>
+      <div class="titles">
+        <p class="wordmark">Sözleşme Okuyucu</p>
+        <p class="site" id="site"></p>
+      </div>
+    </header>
+    <div class="toolbar">
+      <label class="field">
+        <span class="hint">Sözleşme</span>
+        <select class="input" id="doc-select"></select>
+      </label>
+      <div class="tabs" role="tablist" aria-label="Bölümler">
+        <button role="tab" id="tab-ask" data-section="ask">Soru sor</button>
+        <button role="tab" id="tab-clauses" data-section="clauses">Maddeler</button>
+        <button role="tab" id="tab-changes" data-section="changes">Değişiklikler</button>
+      </div>
+    </div>
+    <main id="main" aria-live="polite"></main>
+    <form id="ask-form" class="ask-form" hidden>
+      <label class="check" id="ai-toggle" hidden>
+        <input type="checkbox" id="use-ai" />
+        <span>Claude ile yanıtla <span class="hint">(metin ve soru Anthropic'e gönderilir)</span></span>
+      </label>
+      <div class="ask-row">
+        <input class="input" id="question" autocomplete="off" placeholder="Örneğin: Hesabımı silersem verilerim silinir mi?" />
+        <button class="btn" type="submit">Sor</button>
+      </div>
+    </form>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.page-head h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.site-group h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 28px 0 10px;
+}
+
+.doc-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-bottom: 10px;
+}
+.doc-card.focus {
+  outline: 3px solid var(--marker-edge);
+}
+.doc-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+}
+.doc-card .url {
+  font-size: 13px;
+  color: var(--muted);
+  word-break: break-all;
+}
+.doc-card .bullets {
+  margin-top: 10px;
+}
+.doc-card .bullets li {
+  font-size: 15px;
+}
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+.changed {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--marker);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.confirm {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 520px) {
+  .doc-card {
+    grid-template-columns: 1fr;
+  }
+}

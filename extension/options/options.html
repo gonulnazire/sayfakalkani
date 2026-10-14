@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ayarlar - Sözleşme Okuyucu</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <span id="logo"></span>
+      <div class="titles">
+        <p class="wordmark">Sözleşme Okuyucu</p>
+        <p class="site">Ayarlar</p>
+      </div>
+    </header>
+    <main class="page">
+      <h1>Ayarlar</h1>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+
+      <section class="card">
+        <h2>Uyarılar ve takip</h2>
+        <label class="check">
+          <input type="checkbox" id="consentWarnings" />
+          <span>
+            Kayıt ve onay formlarında uyarı kartı göster
+            <span class="hint">"Kabul ediyorum" kutusu ya da "Kayıt ol" düğmesi görünce, sitenin sözleşmelerindeki riskli maddeleri kısaca gösterir.</span>
+          </span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="watchChanges" />
+          <span>
+            Okuduğum sözleşmelerdeki değişiklikleri takip et
+            <span class="hint">Sözleşmeler günde bir kez yeniden okunur; metin değişirse bildirim gelir ve farklar listelenir.</span>
+          </span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Yapay zeka (isteğe bağlı)</h2>
+        <p class="hint">
+          Varsayılan analiz bu bilgisayarda, anahtar kelime kurallarıyla yapılır ve metin hiçbir yere gönderilmez.
+          Claude'u açarsan popup'ta "Claude ile ayrıntılı özetle" düğmesi ve yan panelde "Claude ile yanıtla" seçeneği belirir.
+          Bu düğmelere bastığında sözleşme metni ve sorun, kendi API anahtarınla Anthropic'e gönderilir; ücretlendirme senin Anthropic hesabından yapılır.
+        </p>
+        <label class="check">
+          <input type="checkbox" id="aiEnabled" />
+          <span>Claude ile özet ve soru-cevabı etkinleştir</span>
+        </label>
+        <div class="field">
+          <label for="apiKey">Claude API anahtarı</label>
+          <input class="input" type="password" id="apiKey" autocomplete="off" spellcheck="false" placeholder="sk-ant-..." />
+          <span class="hint">Anahtar yalnızca bu tarayıcıda saklanır. Anahtar oluşturmak için: console.anthropic.com</span>
+        </div>
+        <div class="field">
+          <label for="model">Model</label>
+          <select class="input" id="model"></select>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Veriler</h2>
+        <p class="hint">Okunan sözleşmeler, özetler ve değişiklik geçmişi yalnızca bu tarayıcıda saklanır.</p>
+        <div class="row" id="clear-area"></div>
+      </section>
+
+      <p class="disclaimer">Sözleşme Okuyucu hukuki tavsiye vermez; sözleşmelerin ne söylediğini anlamana yardım eder.</p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

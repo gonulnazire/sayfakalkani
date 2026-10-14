@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Sözleşme Okuyucu",
+  "short_name": "Sözleşme Okuyucu",
+  "version": "0.1.0",
+  "description": "Kullanım koşullarını ve gizlilik politikalarını bulur, özetler, risk puanı verir ve riskli maddeleri gösterir.",
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "extension/icons/icon16.png",
+    "32": "extension/icons/icon32.png",
+    "48": "extension/icons/icon48.png",
+    "128": "extension/icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Sözleşme Okuyucu",
+    "default_popup": "extension/popup/popup.html",
+    "default_icon": {
+      "16": "extension/icons/icon16.png",
+      "32": "extension/icons/icon32.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "extension/sidepanel/sidepanel.html"
+  },
+  "options_page": "extension/options/options.html",
+  "background": {
+    "service_worker": "extension/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "extension/lib/extract.js",
+        "extension/content/content.js"
+      ],
+      "css": [
+        "extension/content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "sidePanel",
+    "scripting",
+    "offscreen",
+    "notifications",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

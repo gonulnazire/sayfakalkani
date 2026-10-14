@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sözleşme Okuyucu</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <span id="logo"></span>
+      <div class="titles">
+        <p class="wordmark">Sözleşme Okuyucu</p>
+        <p class="site" id="site"></p>
+      </div>
+      <button class="icon-btn" id="settings" title="Ayarlar" aria-label="Ayarlar"></button>
+    </header>
+    <nav class="chips" id="docs" aria-label="Bu sayfadaki sözleşmeler" hidden></nav>
+    <main id="main" aria-live="polite"></main>
+    <footer class="app-footer">
+      <button class="btn" id="ask">Soru sor</button>
+      <button class="btn btn-ghost" id="history">Geçmiş</button>
+    </footer>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "sozlesme-okuyucu-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sözleşme Okuyucu için Remotion ile hazırlanmış 60 saniyelik tanıtım animasyonu",
+  "scripts": {
+    "dev": "remotion studio",
+    "music": "node scripts/generate-music.mjs",
+    "render": "remotion render SozlesmeOkuyucu out/video.mp4",
+    "frames": "node -e \"require('fs').rmSync('out/frames',{recursive:true,force:true})\" && remotion render SozlesmeOkuyucu out/frames --sequence --image-format=jpeg --jpeg-quality=95 --concurrency=2",
+    "encode": "node scripts/encode-video.mjs",
+    "render:browser": "npm run frames && npm run encode",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mediabunny/aac-encoder": "1.56.1",
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "@remotion/renderer": "4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "mediabunny": "1.56.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}

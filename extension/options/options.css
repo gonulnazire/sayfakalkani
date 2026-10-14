@@ -1,0 +1,39 @@
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+.page h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.status {
+  min-height: 22px;
+  margin: 6px 0 10px;
+  font-weight: 700;
+  color: var(--safe);
+}
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.card h2 {
+  font-size: 18px;
+  font-weight: 800;
+}
+.check .hint {
+  display: block;
+  margin-top: 2px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Okuduğun sözleşmeler - Sözleşme Okuyucu</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="history.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <span id="logo"></span>
+      <div class="titles">
+        <p class="wordmark">Sözleşme Okuyucu</p>
+        <p class="site">Okuduğun sözleşmeler</p>
+      </div>
+    </header>
+    <div class="page">
+      <div class="page-head">
+        <div>
+          <h1>Okuduğun sözleşmeler</h1>
+          <p class="hint" id="count"></p>
+        </div>
+        <div id="clear-area"></div>
+      </div>
+      <main id="list" aria-live="polite"></main>
+    </div>
+    <script type="module" src="history.js"></script>
+  </body>
+</html>

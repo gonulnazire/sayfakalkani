@@ -1,0 +1,5 @@
+/* Özetteki bir maddeye tıklanınca orijinal metinde gösterilen fosforlu kalem vurgusu. */
+::highlight(sozlesme-okuyucu) {
+  background-color: #ffe45c;
+  color: #16213a;
+}

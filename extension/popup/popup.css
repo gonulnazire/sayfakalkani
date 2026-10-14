@@ -1,0 +1,49 @@
+body {
+  width: 400px;
+  min-height: 300px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 20px;
+}
+
+.app-footer {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+.app-footer .btn {
+  flex: 1;
+}
+
+.empty h1 {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.empty p {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.score-row .refresh {
+  align-self: flex-start;
+  margin-left: auto;
+  color: var(--muted);
+}
+.score-row .refresh:hover {
+  background: var(--line);
+}
+
+.ai-row {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+}

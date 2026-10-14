@@ -1,0 +1,147 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: grid;
+  gap: 10px;
+  padding: 12px 16px 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+.tabs button {
+  flex: 1;
+  border: 0;
+  background: none;
+  padding: 10px 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+.tabs button[aria-selected='true'] {
+  color: var(--text);
+  border-bottom-color: var(--marker-edge);
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* ---------------------------------------------------------------- soru-cevap */
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.chat {
+  display: grid;
+  gap: 12px;
+}
+.bubble {
+  max-width: 92%;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+.bubble.question {
+  justify-self: end;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-bottom-right-radius: 4px;
+  font-weight: 600;
+}
+.bubble.answer {
+  justify-self: start;
+  background: var(--ink);
+  color: #edf0f4;
+  border-bottom-left-radius: 4px;
+}
+.bubble.answer .engine {
+  display: block;
+  font-size: 12px;
+  color: #a3acbe;
+  margin-top: 8px;
+}
+.bubble .quote-card {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fbfcfd;
+  color: var(--ink);
+}
+.bubble .quote-card q {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  background: var(--marker);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 2px;
+}
+.bubble .quote-card .link-btn {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+}
+.bubble.error {
+  justify-self: start;
+  border: 2px solid var(--stamp);
+  background: var(--surface);
+}
+
+.ask-form {
+  display: grid;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+.ask-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------------------------------------------------------------- değişiklikler */
+
+.diff {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.diff li {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border-left: 5px solid var(--safe);
+  background: var(--surface);
+}
+.diff.removed li {
+  border-left-color: var(--stamp);
+  text-decoration: line-through;
+  text-decoration-color: var(--stamp);
+  color: var(--muted);
+}
+
+.empty-note {
+  color: var(--muted);
+}
